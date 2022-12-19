@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   before :each do
-    @user = User.new(name: 'Saw Gerrera')
+    @user = User.new(name: 'Saw Gerrera', email: 'saw@rebels.com', password: 'password')
   end
 
   context 'Testing Validations' do
@@ -17,17 +17,17 @@ RSpec.describe User, type: :model do
       expect(@user).to_not be_valid
     end
 
-    # it 'is not valid without email' do
-    #   @user.email = nil
-    #   @user.save
-    #   expect(@user).to_not be_valid
-    # end
+    it 'is not valid without email' do
+      @user.email = nil
+      @user.save
+      expect(@user).to_not be_valid
+    end
 
-    # it 'is not valid without password' do
-    #   @user.password = nil
-    #   @user.save
-    #   expect(@user).to_not be_valid
-    # end
+    it 'is not valid without password' do
+      @user.password = nil
+      @user.save
+      expect(@user).to_not be_valid
+    end
   end
 
   context 'Testing Associations' do

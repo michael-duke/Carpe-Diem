@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe GroupExpense, type: :model do
   before :each do
-    @user = User.create(name: 'Mace Windu')
+    @user = User.create(name: 'Mace Windu', email: 'mace@jedi.com', password: 'password')
     @category = Group.create(author: @user, name: 'Games', icon: 'fas fa-gamepad')
     @transaction = Expense.create(author: @user, name: 'Star Wars: BattleFront', amount: 49.99)
     @category_transaction = GroupExpense.new(group: @category, expense: @transaction)
