@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Group, type: :model do
   before :each do
-    @user = User.create(name: 'Captain Rex')
+    @user = User.create(name: 'Captain Rex', email: 'rex@captain.com', password: 'password')
     @category = Group.new(author: @user, name: 'Movies', icon: 'fas fa-film')
   end
 
