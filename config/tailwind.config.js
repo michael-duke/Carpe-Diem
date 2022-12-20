@@ -1,6 +1,6 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+const withMT = require("@material-tailwind/html/utils/withMT");
 
-module.exports = {
+module.exports = withMT({
   content: [
     './public/*.html',
     './app/helpers/**/*.rb',
@@ -10,7 +10,12 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        sans: ['Proxima Nova', 'sans-serif'],
+      },
+      colors: {
+        main: '#3778C2',
+        second: '#5fb523',
+        text: '#434B54',
       },
     },
   },
@@ -19,4 +24,4 @@ module.exports = {
     require('@tailwindcss/aspect-ratio'),
     require('@tailwindcss/typography'),
   ]
-}
+})
