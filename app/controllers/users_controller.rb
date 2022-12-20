@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
 
+  # Splash page for unauthenticated users (see app/controllers/application_controller.rb)
+  def splash; end
+
   # GET /users or /users.json
   def index
     @users = User.all
