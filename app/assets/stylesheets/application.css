@@ -13,7 +13,47 @@
  *= require_tree .
  *= require_self
  */
+
 html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
   font-weight: 250; /* 250 = Proxima Nova Light */
   background-color: #fcfcfc;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  padding-top: 2.0625rem;
+  padding-bottom: 6.25rem;
+}
+
+/* Scrollbar section */
+::-webkit-scrollbar {
+  width: 0.3125rem;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff;
+  border-radius: 0.3125rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background:
+    linear-gradient(
+      45deg,
+      rgba(18, 18, 18, 0.25),
+      rgba(55, 120, 194, 0.7) 100%
+    );
+  border-radius: 0.3125rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(120 113 108);
 }
