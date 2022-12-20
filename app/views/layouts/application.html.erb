@@ -19,18 +19,14 @@
        <p class="py-2 px-3 bg-red-50 mb-5 text-red-500 font-medium rounded-lg inline-block" id="notice"><%= alert %></p>
       <% end %>
 
+      <% if current_user %>
       <button
       class="<%= current_user ? 'button button-cyan' : 'border bg-amber-500 w-max text-gray-100 p-2 hover:text-amber-500 hover:bg-transparent' %>"
       menu-trigger="true"
       aria-expanded="true"
       data-ripple-light="true">
-        <% if current_user %>
-          Hello, <%= current_user.name %>
-        <% elsif controller_name != 'sessions' and controller_name != 'registrations' %>
-          Hi, Guest User
-        <% else %>
-          Menu
-        <% end %>
+          Hello, <%= current_user.name %>!
+      <% end %>
     </button>
      <% if current_user %>
         <%= button_to destroy_user_session_path, method: :delete, class: 'mr-8 flex items-center gap-2' do %>
