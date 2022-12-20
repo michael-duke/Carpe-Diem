@@ -26,3 +26,7 @@
     <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), method: :post %><br />
   <% end %>
 <% end %>
+
+<div class="fixed top-0 right-0 left-0 flex justify-center">
+  <%= image_tag "carpe-diem-logo.png", class: 'md:max-w-md w-56' %>
+</div>
