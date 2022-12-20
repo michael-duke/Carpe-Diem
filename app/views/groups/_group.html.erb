@@ -1,22 +1,24 @@
-<div id="<%= dom_id group %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Users:</strong>
-    <%= group.users_id %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Name:</strong>
-    <%= group.name %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Icon:</strong>
-    <%= group.icon %>
-  </p>
-
+<div id="<%= dom_id group %>" class="my-5 flex items-center justify-between">
+  <div class="flex items-center gap-3">
+    <%= link_to  group_expenses_path(group), class: "flex items-center gap-3" do %>
+      <%= image_tag group.icon, class: "rounded-full w-20 h-20 object-cover" %>
+      <span> <%= group.name %> </span>
+      <span class="font-bold"> $<%= group.total_transactions %> </span>
+    <% end %>
+  </div>
   <% if action_name != "show" %>
-    <%= link_to "Show this group", group, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this group', edit_group_path(group), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
+    <div class="flex gap-2">
+    <%= link_to edit_group_path(group), class: "rounded-lg py-1 px-1 bg-gray-100 inline-block font-medium" do %>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 stroke-amber-500">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+      </svg>
+    <% end %>
+    <%= button_to group_path(group), method: :delete, class: "rounded-lg py-1 px-1 bg-gray-100 inline-block font-medium" do %>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 stroke-red-500">
+       <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5m6 4.125l2.25 2.25m0 0l2.25 2.25M12 13.875l2.25-2.25M12 13.875l-2.25 2.25M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
+      </svg>
+    <% end %>
+    </div>
   <% end %>
 </div>
+
