@@ -18,7 +18,7 @@
     </div>
   <% end %>
 
-  <%= f.button "Log in", type: "submit", class: "log-in self-center w-[80%] mt-3 button button-gradient text-sm text-white bg-main border hover:text-main hover:border-main hover:bg-transparent" %> 
+  <%= f.button "Log in", type: "submit", data: {turbo: false}, class: "log-in self-center w-[80%] mt-3 button button-gradient text-sm text-white bg-main border hover:text-main hover:border-main hover:bg-transparent" %> 
   
   <div class="mt-4">
     <%= render "devise/shared/links" %>
