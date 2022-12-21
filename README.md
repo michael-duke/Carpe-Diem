@@ -39,6 +39,8 @@ After you're finished please remove all the comments and instructions!
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
+  - [🖺 Entity Relationship Diagram](#er-diagram)
+  - [📽️ Project Documentation](#pro-doc)
   - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
@@ -93,11 +95,15 @@ After you're finished please remove all the comments and instructions!
 
 ### Key Features <a name="key-features"></a>
 
-- **[Authentication, User can manage his recepies and foods]**
-- **[Guest User can navigate the App and read all ]**
+- **[Authentication, User can manage his categories and transactions ]**
+- **[User must be authenticated]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- Project Documentation -->
+## 📽️ Project Doocumentation <a name="pro-doc"></a>
+
+Here is a link to the [documentation]() of the project.
 <!-- LIVE DEMO -->
 
 ## 🚀 Live Demo <a name="live-demo"></a>
@@ -152,9 +158,12 @@ rails db:seed
 
 To run the project, execute the following command:
 
-
 ```sh
-  rails server or rails s
+  ./bin/dev  # for building tailwind css
+``` 
+Or
+```sh
+  rails server or rails s  # after build
 ``` 
 
 Run tests
@@ -182,7 +191,7 @@ rspec
 
 - [ ] **[Use importmaps or esbuild for loading JavaScript]**
 - [ ] **[Notifications that pop up and close]**
-
+- [ ] **[Implement side menu and User settings]**
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
