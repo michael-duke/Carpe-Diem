@@ -1,0 +1,16 @@
+<h2>Forgot your password?</h2>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="relative mb-4">
+    <%= f.email_field :email, id: "email", class: "block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer", placeholder: " ", autofocus: true, autocomplete: "email" %>
+    <%= f.label :email, for: "email", class: "absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1" %>
+  </div>
+
+  <%= f.button "Send me reset instructions", type: "submit", class: "self-start w-[80%] mt-3 button button-gradient text-sm text-white bg-blue-gray border hover:text-blue-gray-500 hover:border-blue-gray-500 hover:bg-transparent" %>
+  
+  <div class="mt-4">
+    <%= render "devise/shared/links" %>
+  </div>
+<% end %>

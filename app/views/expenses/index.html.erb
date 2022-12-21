@@ -1,0 +1,27 @@
+<div class="w-full">
+  <%
+=begin%>
+ <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <% end %> 
+<%
+=end%>
+
+  <div class="flex justify-between items-center">
+    <h1 class="font-bold text-4xl"><%= "#{@group.name}' " %>Transactions</h1>
+  </div>
+
+  <!--max-h-[320px] overflow-y-scroll -->
+  <div id="expenses" class="min-w-full">
+    <%= render @expenses %>
+  </div>
+</div>
+
+<div class="bg-second fixed bottom-0 left-0 right-0 py-3 flex justify-center">
+  <%= link_to new_group_expense_path, class: "w-[80%] flex items-center justify-center gap-2 py-2 px-5 bg-second border text-white block font-medium" do %>
+    <span>New transaction</span>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
+    </svg>
+  <% end %>
+</div>

@@ -1,0 +1,53 @@
+<nav class="fixed mb-5 px-3 top-0 right-0 left-0 bg-main pt-5 z-50">
+  <div class="top-nav flex items-center justify-between border-b-2 pb-2">
+      <% if controller_name == 'groups' and action_name == 'index' %>
+        <div class="hamburger-menu">
+          <svg class="stroke-white h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </div>
+      <% elsif controller_name == 'groups' and action_name != 'index' %>
+        <div class="back-btn">
+          <%= link_to groups_path do %>
+          <svg class="stroke-white h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
+          </svg>
+          <% end %>
+        </div>
+      <% elsif controller_name == 'expenses' %>
+        <div class="back-btn">
+          <%= link_to "#{action_name == 'index' ? groups_path : group_expenses_path}" do %>
+          <svg class="stroke-white h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
+          </svg>
+          <% end %>
+        </div>
+      <% end %>
+      <h1 class="text-white text-2xl m-0 uppercase">
+        <% if controller_name == 'expenses' %>
+          <%= 'Transactions' %>
+        <% else %>
+          <%= 'Categories' %>
+        <% end %>
+      </h1>
+      <div class="search">
+        <svg class="h-8 w-8 stroke-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+        </svg>
+      </div>
+  </div>
+  <div class="my-3 flex justify-between">
+    <span class="bg-white py-1 px-2 w-max rounded-lg text-main font-semibold">
+      <%= current_user.name %>
+      <% if controller_name == 'expenses' %>
+        : $<%= @group.total_transactions %>
+      <% end %>
+    </span>
+    <%= button_to destroy_user_session_path, method: :delete, class: 'flex items-center gap-2' do %>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 stroke-white">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
+      </svg>
+      <span class="text-white font-semibold">Log Out</span>
+    <% end %>
+  </div>
+</nav>
