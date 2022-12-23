@@ -1,12 +1,5 @@
+<% content_for :title, "Carpe Diem | #{@group.name} Transactions" %>
 <div class="w-full">
-  <%
-=begin%>
- <% if notice.present? %>
-    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-  <% end %> 
-<%
-=end%>
-
   <div class="flex justify-between items-center">
     <h1 class="font-bold text-4xl"><%= "#{@group.name}' " %>Transactions</h1>
   </div>
