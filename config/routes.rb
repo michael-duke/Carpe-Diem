@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   #   root to: 'devise/sessions#new'
   # end
   
-  resources :users
-  resources :groups, :path => "categories" do 
-    resources :expenses, :path => "transactions"
+  resources :users, only: [:splash]
+  resources :groups, only: [:index, :new, :create, :edit, :update, :destroy], :path => "categories" do 
+    resources :expenses, only: [:index, :new, :create, :edit, :update, :destroy], :path => "transactions"
   end
 end
