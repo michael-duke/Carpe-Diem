@@ -84,4 +84,4 @@ test:
 production:
   <<: *default
   database: <%= ENV['POSTGRES_DB'] %> #Carpe_Diem_production
-  url: <%= ENV["DATABASE_URL"] %> #Render
+  url: <%= ENV["DATABASE_URL"] %> #Railway
