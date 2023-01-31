@@ -108,7 +108,7 @@ Here is a link to the [documentation](https://drive.google.com/file/d/1rkVQ0UvE2
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [CarpeDiem](https://carpe-diem.onrender.com/)
+- [CarpeDiem](https://carpe-diem.up.railway.app/) :smiley:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
