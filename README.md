@@ -15,9 +15,6 @@ REQUIRED SECTIONS:
 - Authors
 - Future Features
 - Contributing
-- Show your support
-- Acknowledgements
-- License
 
 <!-- TABLE OF CONTENTS -->
 
